@@ -13,6 +13,24 @@ Reasoning about Story Endings
 0.5921966862640299
 
 ## Training on the Train Set
+### Original Parameters
+- Layers
+~~~~
+  model = tf.keras.Sequential()
+  model.add(tf.keras.layers.Dense(512, activation="relu"))
+  model.add(tf.keras.layers.Dense(768, activation="linear"))
+~~~~
+- \# Training Steps: 10000
+- Batch Size: 32
+- Learning Rate: 0.001
+- \# Train Examples: 5000
+
+_2016 validation accuracy: 0.6392303580972741
+
+_2018 validation accuracy: 0.6371737746658179
+
+_2016 test accuracy: 0.6456440406199893
+
 ### First Variant:
 - Layers
 ~~~~

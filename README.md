@@ -22,6 +22,7 @@ Reasoning about Story Endings
 ~~~~
 - \# Training Steps: 10000
 - Batch Size: 32
+- Number of Candidates: 64
 - Learning Rate: 0.001
 - \# Train Examples: 5000
 
@@ -41,6 +42,7 @@ _2016 test accuracy: 0.6456440406199893_
 ~~~~
 - \# Training Steps: 20000
 - Batch Size: 32
+- Number of Candidates: 64
 - Learning Rate: 0.001
 - \# Train Examples: 5000
 
@@ -61,6 +63,7 @@ _2016 test accuracy: 0.518439337252806_
 ~~~~
 - \# Training Steps: 20000
 - Batch Size: 32
+- Number of Candidates: 64
 - Learning Rate: 0.0005
 - \# Train Examples: 20000
   For our second trial we added a kernel initializer and a kernel regualizer to our architecture. We changed the hyerparameters of numsteps from 10000 to 20000, and we decreased the learning rate from 0.001 to 0.0005. We did this in the hope that we could get above the default's .67 correct rate, but after about 15000 ish trials, our evaluation does not grow beyond .67

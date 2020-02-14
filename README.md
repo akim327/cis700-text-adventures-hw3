@@ -16,9 +16,10 @@ Reasoning about Story Endings
 ### First Variant:
 - Layers
 ~~~~
-(512, activation="relu")
-(64, kernel_regularizer=tf.keras.regularizers.l1(0.01))
-(768, activation="linear")
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(512, activation="relu"))
+model.add(tf.keras.layers.Dense(64, kernel_regularizer=tf.keras.regularizers.l1(0.01)))
+model.add(tf.keras.layers.Dense(768, activation="linear"))
 ~~~~
 - \# Training Steps: 20000
 - Batch Size: 32
@@ -56,8 +57,9 @@ _2016 test accuracy: 0.6477819347942276_
 ### Original Parameters: ###
 - Layers
 ~~~~
-(512, activation='relu')
-(2, activation="linear")
+  model = tf.keras.Sequential()
+  model.add(tf.keras.layers.Dense(512, activation="relu"))
+  model.add(tf.keras.layers.Dense(2, activation="linear"))
 ~~~~
 - \# Training Steps: 20000
 - Batch Size: 32

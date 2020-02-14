@@ -13,7 +13,7 @@ Reasoning about Story Endings
 0.5921966862640299
 
 ## Training on Validation Set
-Original Parameters:
+#### Original Parameters: ####
 - Layers
   - (512, activation='relu')
   - (2, activation="linear")

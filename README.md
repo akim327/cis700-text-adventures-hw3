@@ -17,6 +17,28 @@ The starting test accuracy was not amazing at about 60%, but using sentiment and
 
 I also tried averaging the context sentences' sentiment and comparing the distances between the computed sentiment average and each option's sentiments, but I met with worse results. This is likely because the contexts of the data entries didn't really correlate much with the option's sentiments.
 
+### Wrong Examples
+```
+Context: ['Alice was getting married in a few weeks.', 'One night, her mother called and she forgot to call her back.', 'Her mother left an angry message on her phone.', 'She threatened not to come to the wedding.']
+
+Options: ['Alice called her mother and apologized profusely.', 'Alice messaged a cute guy she saw on Tinder.'] 
+
+Prediction:  1
+```
+
+Since the model simply chose the sentence with a more positive sentiment, words like "cute" likely threw the sentiment of the second sentence higher than the first sentence. This model didn't really utilize analysis of the context of the words like how the first option mentioned Alice's mother, who was referred to twice in the context sentences. Since our BERT classifier did keep in mind what was mentioned, it did not make this error.
+
+```
+Context: ['Trish hated the outdoors.', 'Her friends convinced her to go camping', She wasn't having a good time.', 'They showed her how to fish and showed her the stars.']
+
+Options: ['Eventually Trish grudgingly came to accept nature.', 'The fish had very interesting mating habits.']
+
+Prediction: 1
+
+```
+
+Similarly, the word "interesting" likely caused the sentiment of the second sentence to be higher than "grudgingly". Interestingly, the BERT classifier and variants predicted this sample correctly as well despite the similarily of the meanings of "nature" with "fish". The BERT classifier may have recognized that there was a cstronger connection with "nature" in "outdoors" and "camping" as well.
+
 ## Training on the Train Set
 ### Methods
 We looked at the given link to the _keras.layer_ link to see the different parameters we could configure to test for different accuracies. We didn't have a particular method of determining which to configure. However, we realized that configuring just one aspect of the model would be more helpful in pinning down what helped the model improve.
@@ -137,3 +159,13 @@ _2016 test accuracy: 0.7493319080705505_
 
 We thought that increasing number of steps and decreasing learning rate would yeild a more accurate model. We were correct in this assumption. However, in previous undocumented case, we created a model with the same parameters, but we added an extra layer to the architecture in the form of a bias regulator. This change actually drastically decreased the accuray of the model, indicating that increasing architecture complexity does not necessarily yield better results. But we may not have used the correct layers as well.
 
+### Wrong Examples for All
+```
+Context: ['Josh loved when his mom baked apple pie.', 'He hated how he always had to wait until after dinner though.', 'So he decided this time he would sneak a piece before dinner.', 'The eggs his mom used must have been bad though.'] 
+
+Options: ['Josh thought that the pie was delicious.', 'Josh got sick.'] 
+
+Prediction:  0
+```
+
+All of the classifiers got this example wrong. The sentiment analysis is clear in the reason for its mistake, but it's less clear for the BERT classifiers. It may have been that, while the first option mentions Josh and the pie and delicious is a common word for a food item, the option was more "associated" with the words of the context story, compared to being "sick", which was only indicated by the last context sentence about the eggs being bad. The eggs being bad seems like it would be a difficult concept to connect to geting sick because there's a lot of ways that food words can be connected to being sick like "rotten".

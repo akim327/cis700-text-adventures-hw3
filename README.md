@@ -25,11 +25,11 @@ Reasoning about Story Endings
 - Learning Rate: 0.001
 - \# Train Examples: 5000
 
-_2016 validation accuracy: 0.6392303580972741
+_2016 validation accuracy: 0.6392303580972741_
 
-_2018 validation accuracy: 0.6371737746658179
+_2018 validation accuracy: 0.6371737746658179_
 
-_2016 test accuracy: 0.6456440406199893
+_2016 test accuracy: 0.6456440406199893_
 
 ### First Variant:
 - Layers
@@ -98,7 +98,7 @@ _2016 test accuracy: 0.7113842864778194_
 - Learning Rate: 0.1
 - \# Train Examples: 5000
 
-_2016 test accuracy: 0.5130946018172
+_2016 test accuracy: 0.5130946018172_
 
 ### Second Variant:
 - Layers
@@ -113,4 +113,4 @@ _2016 test accuracy: 0.5130946018172
 - Learning Rate: 0.0005
 - \# Train Examples: 5000
 
-_2016 test accuracy: 0.5130946018172
+_2016 test accuracy: 0.5130946018172_

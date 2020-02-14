@@ -11,3 +11,16 @@ Reasoning about Story Endings
 
 2016 test accuracy: 
 0.5921966862640299
+
+## Training on Validation Set
+Original Parameters:
+- Layers
+  - (512, activation='relu')
+  - (2, activation="linear")
+- # Training Steps: 20000
+- Batch Size: 32
+- Learning Rate: 0.001
+- # Train Examples: 5000
+
+### Validation accuracy: 0.690
+### 2016 test accuracy: 0.7113842864778194

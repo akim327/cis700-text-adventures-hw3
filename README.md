@@ -85,3 +85,32 @@ _2016 test accuracy: 0.6477819347942276_
 - \# Train Examples: 5000
 
 _2016 test accuracy: 0.7113842864778194_
+
+### First Variant:
+- Layers
+~~~~
+  model = tf.keras.Sequential()
+  model.add(tf.keras.layers.Dense(512, activation="relu"))
+  model.add(tf.keras.layers.Dense(2, activation="linear"))
+~~~~
+- \# Training Steps: 20000
+- Batch Size: 32
+- Learning Rate: 0.1
+- \# Train Examples: 5000
+
+_2016 test accuracy: 0.5130946018172
+
+### Second Variant:
+- Layers
+~~~~
+  model = tf.keras.Sequential()
+  model.add(tf.keras.layers.Dense(512, activation="relu"))
+  model.add(tf.keras.layers.Dense(64, bias_regularizer=tf.keras.regularizers.l2(0.01)))
+  model.add(tf.keras.layers.Dense(2, activation="linear"))
+~~~~
+- \# Training Steps: 40000
+- Batch Size: 32
+- Learning Rate: 0.0005
+- \# Train Examples: 5000
+
+_2016 test accuracy: 0.5130946018172

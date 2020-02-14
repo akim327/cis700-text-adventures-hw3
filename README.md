@@ -17,10 +17,10 @@ Original Parameters:
 - Layers
   - (512, activation='relu')
   - (2, activation="linear")
-- # Training Steps: 20000
+- \# Training Steps: 20000
 - Batch Size: 32
 - Learning Rate: 0.001
-- # Train Examples: 5000
+- \# Train Examples: 5000
 
-### Validation accuracy: 0.690
-### 2016 test accuracy: 0.7113842864778194
+_Validation accuracy: 0.690_
+_2016 test accuracy: 0.7113842864778194_

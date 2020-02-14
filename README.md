@@ -110,13 +110,12 @@ _2016 test accuracy: 0.7268840192410476_
 ~~~~
   model = tf.keras.Sequential()
   model.add(tf.keras.layers.Dense(512, activation="relu"))
-  model.add(tf.keras.layers.Dense(64, bias_regularizer=tf.keras.regularizers.l2(0.01)))
   model.add(tf.keras.layers.Dense(2, activation="linear"))
 ~~~~
 - \# Training Steps: 40000
 - Batch Size: 32
 - Learning Rate: 0.0005
 - \# Train Examples: 5000
-- We thought that increasing number of steps and decreasing learning rate as well as increasing the complexity of the architecture would yeild a more accurate model. However we were wrong unfortunately, and we are unsure whether modifying the layers or increasing the number of steps attributes to this change. We also considered around .72 to be a soft cap for the models.
+- We thought that increasing number of steps and decreasing learning rate would yeild a more accurate model. We were correct in this assumption. However, in previous undocumented case, we created a model with the same parameters, but we added an extra layer to the architecture in the form of a bias regulator. This change actually drastically decreased the accuray of the model, indicating that increasing architecture complexity does not necessarily yeild better results.
 
-_2016 test accuracy: 0.6862640299305185_
+_2016 test accuracy: 0.7493319080705505_

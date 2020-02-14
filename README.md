@@ -95,10 +95,10 @@ _2016 test accuracy: 0.7113842864778194_
 ~~~~
 - \# Training Steps: 20000
 - Batch Size: 32
-- Learning Rate: 0.1
+- Learning Rate: 0.0001
 - \# Train Examples: 5000
 
-_2016 test accuracy: 0.5130946018172_
+_2016 test accuracy: 0.7268840192410476
 
 ### Second Variant:
 - Layers
